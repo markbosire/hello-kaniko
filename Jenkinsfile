@@ -37,7 +37,7 @@ spec:
     stages {
         stage('Build Java App') {
             steps {
-                container('kaniko') {
+                container('maven') {
                     sh 'mvn clean package'
                 }
             }
