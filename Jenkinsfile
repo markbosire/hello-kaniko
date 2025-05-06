@@ -7,9 +7,9 @@ kind: Pod
 metadata:
   labels:
     app: kaniko-build
-  namespace: jenkins  // Using jenkins namespace
+  namespace: jenkins
 spec:
-  serviceAccountName: jenkins  // Using jenkins service account
+  serviceAccountName: jenkins
   containers:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:latest
