@@ -11,6 +11,11 @@ metadata:
 spec:
   serviceAccountName: jenkins
   containers:
+  - name: maven
+      image: maven:3.9.9-amazoncorretto-21-alpine
+      command:
+        - cat
+      tty: true
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
