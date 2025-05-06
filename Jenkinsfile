@@ -7,7 +7,9 @@ kind: Pod
 metadata:
   labels:
     app: kaniko-build
+  namespace: jenkins  // Using jenkins namespace
 spec:
+  serviceAccountName: jenkins  // Using jenkins service account
   containers:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:latest
@@ -39,7 +41,10 @@ spec:
             steps {
                 container('kaniko') {
                     sh '''
-                    /kaniko/executor                       --dockerfile=Dockerfile                       --context=/home/spidey/projects/hello-kaniko                       --destination=$IMAGE_NAME:latest
+                    /kaniko/executor \
+                    --dockerfile=Dockerfile \
+                    --context=/home/spidey/projects/hello-kaniko \
+                    --destination=$IMAGE_NAME:latest
                     '''
                 }
             }
