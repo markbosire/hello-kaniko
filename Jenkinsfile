@@ -48,7 +48,7 @@ spec:
                     sh '''
                     /kaniko/executor \
                     --dockerfile=Dockerfile \
-                    --context=/home/spidey/projects/hello-kaniko \
+                    --context=${WORKSPACE} \
                     --destination=$IMAGE_NAME:latest
                     '''
                 }
