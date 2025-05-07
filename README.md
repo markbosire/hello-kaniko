@@ -35,7 +35,7 @@ This repository contains a simple Java application that is built using Jenkins a
 Create a Kind cluster using the provided configuration:
 
 ```bash
-# Create a new cluster with the jenkins-config.yaml
+# Create a new cluster with the jenkins-config.yaml replace the placeholder ip with your local ip
 kind create cluster --name jenkins --config kind/jenkins-config.yaml
 
 # Verify the cluster is running
